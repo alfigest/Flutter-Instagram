@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram_feed_ui_redesign/models/model.dart';
+import 'package:flutter_instagram_feed_ui_redesign/screens/Story_screen.dart';
 import 'package:flutter_instagram_feed_ui_redesign/screens/post_screen.dart';
 
 class FeedScreen extends StatefulWidget {
@@ -212,7 +213,8 @@ class _FeedScreenState extends State<FeedScreen> {
                 if (index == 0) {
                   return SizedBox(width: 10.0);
                 }
-                return Container(
+                return InkWell(onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>ViewStoryScreen())),
+                  child : Container(
                   margin: EdgeInsets.all(10.0),
                   width: 60.0,
                   height: 60.0,
@@ -236,6 +238,7 @@ class _FeedScreenState extends State<FeedScreen> {
                       ),
                     ),
                   ),
+                )
                 );
               },
             ),
